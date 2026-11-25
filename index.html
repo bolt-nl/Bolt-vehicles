@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Bolt Netherlands vehicle eligibility list: which categories each car model can be used for, effective 1 January 2027.">
-<title>Bolt Eligibility List</title>
+<meta name="description" content="Bolt Vehicle List for the Netherlands: which categories each car model can be used for, effective 1 January 2027.">
+<title>Bolt voertuigenlijst</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
@@ -24,9 +24,9 @@
   --ink-3:#8B938C;
   --green:#34D186;
   --on-green:#06301E;
-  --hero-bg:#0D100E;
-  --hero-ink:#FFFFFF;
-  --hero-ink-2:#A8B2AB;
+  --hero-bg:#E6F8EF;
+  --hero-ink:#0D100E;
+  --hero-ink-2:#3F5A4C;
   --hero-line:rgba(255,255,255,.18);
   --std-fg:#596159; --std-bg:#E9EDEA;
   --cmf-fg:#06301E; --cmf-bg:#34D186;
@@ -180,7 +180,7 @@ mark{background:rgba(52,209,134,.3);color:inherit;border-radius:3px;padding:0 1p
 .field{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--ink-2)}
 .field select{width:100%;background:var(--bg);border:1px solid var(--line)}
 .field select:disabled{opacity:.55;cursor:not-allowed}
-.chk-result{background:var(--hero-bg);color:var(--hero-ink);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:10px}
+.chk-result{background:var(--hero-bg);color:var(--hero-ink);border:1px solid #BFEBD4;border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:10px}
 .chk-result.waiting{background:var(--bg);color:var(--ink-2);border:1px dashed var(--line)}
 .chk-result .res-label{font-size:13px;font-weight:600;color:var(--hero-ink-2)}
 .chk-result .tags{justify-content:flex-start}
@@ -253,21 +253,19 @@ footer{background:var(--surface);padding:40px 24px 56px}
     <div class="rules">
       <div class="rule">
         <div><span class="tag premium">Premium</span></div>
-        <p class="cap"><span data-i18n="maxAge"></span> <b data-i18n="sixYears"></b></p>
+        <p class="cap"><span data-i18n="maxAge"></span> <b data-i18n="sixYears"></b><br><span data-i18n="minRating"></span> <b data-i18n="rating48"></b></p>
         <div class="chain">
           <div class="step"><span class="age" data-i18n="age06"></span><span class="to">&rarr;</span><span class="tag premium">Premium</span></div>
           <div class="step"><span class="age" data-i18n="age7"></span><span class="to">&rarr;</span><span class="tag comfort">Comfort</span></div>
           <div class="step"><span class="age" data-i18n="age815"></span><span class="to">&rarr;</span><span class="tag standard">Bolt</span></div>
-          <div class="step"><span class="age" data-i18n="age16"></span><span class="to">&rarr;</span><span class="tag none" data-i18n="notEligible"></span></div>
         </div>
       </div>
       <div class="rule">
         <div><span class="tag comfort">Comfort</span></div>
-        <p class="cap"><span data-i18n="maxAge"></span> <b data-i18n="sevenYears"></b></p>
+        <p class="cap"><span data-i18n="maxAge"></span> <b data-i18n="sevenYears"></b><br><span data-i18n="minRating"></span> <b data-i18n="rating47"></b></p>
         <div class="chain">
           <div class="step"><span class="age" data-i18n="age07"></span><span class="to">&rarr;</span><span class="tag comfort">Comfort</span></div>
           <div class="step"><span class="age" data-i18n="age815"></span><span class="to">&rarr;</span><span class="tag standard">Bolt</span></div>
-          <div class="step"><span class="age" data-i18n="age16"></span><span class="to">&rarr;</span><span class="tag none" data-i18n="notEligible"></span></div>
         </div>
       </div>
       <div class="rule">
@@ -340,13 +338,15 @@ const I18N = {
     resAge: (a, y) => 'Based on a car age of ' + a + (a === 1 ? ' year' : ' years') + ' in ' + y + '.',
     resStep: (from, to) => 'This model qualifies for ' + from + ', but at this age it moves to ' + to + '.',
     chkMissing: "Can't find your car?", chkMissingLink: 'Contact us',
-    h1: 'Bolt Eligibility List',
-    intro: 'Every vehicle model in the Dutch fleet, the categories it can be used for, and the age at which it steps down a tier.',
+    h1: 'Bolt Vehicle List',
+    intro: 'All vehicle models eligible on the Bolt platform in the Netherlands, the categories each qualifies for, and the vehicle age at which it moves down a category.',
     rulesTitle: 'How vehicle age changes the category',
     rulesLede: "A car that ages past its category's limit moves down a tier. Cars older than 15 years can no longer drive on Bolt.",
     maxAge: 'Maximum age', sixYears: '6 years', sevenYears: '7 years',
     age06: '0–6 yrs', age07: '0–7 yrs', age7: '7 yrs', age815: '8–15 yrs', age015: '0–15 yrs', age16: '16+ yrs',
     fifteenYears: '15 years', notEligible: 'Not eligible',
+    minRating: 'Minimum driver rating', rating47: '4.7', rating48: '4.8',
+    resRating: (c, r) => c + ' also needs a minimum driver rating of ' + r + '.',
     resNone: 'Your car can no longer drive on Bolt',
     resNoneNote: 'Cars older than 15 years are not eligible for any category.',
     listTitle: 'Models by brand',
@@ -363,7 +363,7 @@ const I18N = {
     contactTitle: "Couldn't find your vehicle here?",
     contactText: 'Email Bolt Netherlands Driver Support with your car’s make, model and year, or reach us through Support in the Bolt Driver app.',
     contactBtn: 'Contact us',
-    supportUrl: 'mailto:netherlands@bolt.eu?subject=' + encodeURIComponent('Vehicle not on the Eligibility List'),
+    supportUrl: 'mailto:netherlands@bolt.eu?subject=' + encodeURIComponent('Vehicle not on the Bolt Vehicle List'),
     count: (m, b) => m + (m === 1 ? ' model' : ' models') + ' · ' + b + (b === 1 ? ' brand' : ' brands'),
     brandCount: n => n + (n === 1 ? ' model' : ' models'),
   },
@@ -379,13 +379,15 @@ const I18N = {
     resAge: (a, y) => 'Op basis van een leeftijd van ' + a + ' jaar in ' + y + '.',
     resStep: (from, to) => 'Dit model valt onder ' + from + ', maar door de leeftijd gaat het naar ' + to + '.',
     chkMissing: 'Staat je auto er niet tussen?', chkMissingLink: 'Neem contact op',
-    h1: 'Bolt Eligibility List',
-    intro: 'Elk voertuigmodel in de Nederlandse vloot, de categorieën waarvoor het ingezet kan worden en de leeftijd waarop het een niveau zakt.',
+    h1: 'Bolt voertuigenlijst',
+    intro: 'Alle voertuigmodellen die in Nederland op het Bolt-platform zijn toegestaan, de categorieën waarvoor elk model in aanmerking komt en de leeftijd waarop een voertuig een categorie zakt.',
     rulesTitle: 'Hoe de leeftijd van een auto de categorie verandert',
     rulesLede: 'Een auto die de leeftijdsgrens van zijn categorie voorbij is, zakt een niveau. Auto’s ouder dan 15 jaar kunnen niet meer op Bolt rijden.',
     maxAge: 'Maximale leeftijd', sixYears: '6 jaar', sevenYears: '7 jaar',
     age06: '0–6 jaar', age07: '0–7 jaar', age7: '7 jaar', age815: '8–15 jaar', age015: '0–15 jaar', age16: '16+ jaar',
     fifteenYears: '15 jaar', notEligible: 'Niet toegestaan',
+    minRating: 'Minimale chauffeursbeoordeling', rating47: '4,7', rating48: '4,8',
+    resRating: (c, r) => 'Voor ' + c + ' heb je ook een minimale chauffeursbeoordeling van ' + r + ' nodig.',
     resNone: 'Je auto kan niet meer op Bolt rijden',
     resNoneNote: 'Auto’s ouder dan 15 jaar komen voor geen enkele categorie in aanmerking.',
     listTitle: 'Modellen per merk',
@@ -402,7 +404,7 @@ const I18N = {
     contactTitle: 'Staat jouw auto er niet tussen?',
     contactText: 'Mail Bolt Nederland Chauffeurssupport met het merk, model en bouwjaar van je auto, of neem contact op via Support in de Bolt Driver-app.',
     contactBtn: 'Neem contact op',
-    supportUrl: 'mailto:netherlands@bolt.eu?subject=' + encodeURIComponent('Voertuig staat niet op de Eligibility List'),
+    supportUrl: 'mailto:netherlands@bolt.eu?subject=' + encodeURIComponent('Voertuig staat niet op de Bolt voertuigenlijst'),
     count: (m, b) => m + (m === 1 ? ' model' : ' modellen') + ' · ' + b + (b === 1 ? ' merk' : ' merken'),
     brandCount: n => n + (n === 1 ? ' model' : ' modellen'),
   }
@@ -446,6 +448,7 @@ function highlight(name, q){
 function applyStatic(){
   const d = t();
   document.documentElement.lang = lang;
+  document.title = d.h1;
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const v = d[el.dataset.i18n];
     if (typeof v === 'string') el.textContent = v;
@@ -566,6 +569,8 @@ function renderChecker(){
     + '<span class="tags">' + TIERS.slice(0, level).map(k => '<span class="tag ' + k + '">' + LABEL[k] + '</span>').join('') + '</span>'
     + '<span class="res-high">' + esc(d.resHigh(LABEL[top])) + '</span>'
     + '<p class="res-note">' + esc(d.resAge(age, REF_YEAR)) + '</p>';
+  if (top === 'premium') html += '<p class="res-note">' + esc(d.resRating('Premium', d.rating48)) + '</p>';
+  else if (top === 'comfort') html += '<p class="res-note">' + esc(d.resRating('Comfort', d.rating47)) + '</p>';
   if (level < ORDER[car.c]) html += '<p class="res-note">' + esc(d.resStep(LABEL[car.c], LABEL[top])) + '</p>';
   box.className = 'chk-result';
   box.innerHTML = html;
