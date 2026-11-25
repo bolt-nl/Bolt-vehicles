@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Bolt Netherlands vehicle eligibility list: which categories each car model can be used for, effective 1 January 2027.">
+<title>Bolt Eligibility List</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+</head>
+<body>
+<style>
+:root{
+  --bg:#FFFFFF;
+  --surface:#F4F6F4;
+  --surface-2:#E9EDEA;
+  --line:#E2E7E3;
+  --line-soft:#EDF0EE;
+  --ink:#0D100E;
+  --ink-2:#596159;
+  --ink-3:#8B938C;
+  --green:#34D186;
+  --on-green:#06301E;
+  --hero-bg:#0D100E;
+  --hero-ink:#FFFFFF;
+  --hero-ink-2:#A8B2AB;
+  --hero-line:rgba(255,255,255,.18);
+  --std-fg:#596159; --std-bg:#E9EDEA;
+  --cmf-fg:#06301E; --cmf-bg:#34D186;
+  --prm-fg:#D6F7E6; --prm-bg:#00311F;
+  --focus:#00311F;
+  --radius-lg:24px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D100E; --surface:#171B18; --surface-2:#212622; --line:#2B312D; --line-soft:#232924;
+    --ink:#F2F5F3; --ink-2:#A3ACA6; --ink-3:#78817B;
+    --green:#34D186; --on-green:#06301E;
+    --hero-bg:#06261A; --hero-ink:#FFFFFF; --hero-ink-2:#9FB7AB; --hero-line:rgba(255,255,255,.2);
+    --std-fg:#A3ACA6; --std-bg:#212622;
+    --cmf-fg:#06301E; --cmf-bg:#34D186;
+    --prm-fg:#06301E; --prm-bg:#9BE9C4;
+    --focus:#34D186;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D100E; --surface:#171B18; --surface-2:#212622; --line:#2B312D; --line-soft:#232924;
+  --ink:#F2F5F3; --ink-2:#A3ACA6; --ink-3:#78817B;
+  --green:#34D186; --on-green:#06301E;
+  --hero-bg:#06261A; --hero-ink:#FFFFFF; --hero-ink-2:#9FB7AB; --hero-line:rgba(255,255,255,.2);
+  --std-fg:#A3ACA6; --std-bg:#212622;
+  --cmf-fg:#06301E; --cmf-bg:#34D186;
+  --prm-fg:#06301E; --prm-bg:#9BE9C4;
+  --focus:#34D186;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:16px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- hero ---------- */
+.hero{background:var(--hero-bg);color:var(--hero-ink);padding:28px 24px 72px}
+.hero-inner{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:20px;align-items:flex-start}
+.topbar{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;margin-bottom:16px;
+}
+.kicker{
+  display:inline-flex;align-items:center;
+  background:rgba(52,209,134,.14);color:var(--green);
+  font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;
+}
+.langswitch{
+  margin-left:auto;display:inline-flex;gap:2px;padding:3px;
+  border:1px solid var(--hero-line);border-radius:999px;
+}
+.langswitch button{
+  font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.02em;
+  color:var(--hero-ink-2);background:transparent;border:0;cursor:pointer;
+  padding:6px 14px;border-radius:999px;min-height:32px;
+}
+.langswitch button:hover{color:var(--hero-ink)}
+.langswitch button[aria-pressed="true"]{background:var(--green);color:var(--on-green)}
+h1{
+  font-weight:700;font-size:clamp(32px,5.4vw,58px);line-height:1.03;
+  letter-spacing:-.035em;margin:0;max-width:18ch;text-wrap:balance;
+}
+.hero p{margin:0;color:var(--hero-ink-2);font-size:18px;max-width:56ch;line-height:1.5}
+
+.effective{
+  display:inline-flex;align-items:center;gap:10px;margin-top:4px;
+  background:var(--green);color:var(--on-green);
+  font-size:15px;font-weight:700;padding:9px 16px;border-radius:999px;
+}
+.effective .dot{width:8px;height:8px;border-radius:50%;background:var(--on-green)}
+.notice{
+  background:var(--surface);border-left:4px solid var(--green);
+  border-radius:var(--radius-lg);padding:24px 28px;gap:12px;
+}
+.notice h2{font-size:clamp(19px,2.2vw,24px)}
+.notice ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;color:var(--ink-2)}
+.notice li::marker{color:var(--green)}
+
+/* ---------- page ---------- */
+.wrap{max-width:1120px;margin:0 auto;padding:56px 24px 88px;display:flex;flex-direction:column;gap:56px}
+section{display:flex;flex-direction:column;gap:18px}
+h2{font-weight:700;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.025em;margin:0}
+.lede{margin:0;color:var(--ink-2);max-width:64ch;font-size:16px}
+
+/* ---------- rule cards ---------- */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.rule{
+  background:var(--surface);border-radius:var(--radius-lg);padding:24px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.cap{font-size:13px;color:var(--ink-2);font-weight:500;margin:0}
+.cap b{color:var(--ink);font-weight:600}
+.chain{display:flex;flex-direction:column;gap:8px;margin-top:2px}
+.step{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink-2)}
+.step .age{min-width:72px;font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink);font-size:13px}
+.step .to{color:var(--ink-3)}
+
+/* ---------- tags ---------- */
+.tag{
+  display:inline-flex;align-items:center;font-size:12.5px;font-weight:600;
+  padding:4px 11px;border-radius:999px;white-space:nowrap;
+}
+.tags{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.tag.standard{color:var(--std-fg);background:var(--std-bg)}
+.tag.comfort{color:var(--cmf-fg);background:var(--cmf-bg)}
+.tag.premium{color:var(--prm-fg);background:var(--prm-bg)}
+
+/* ---------- toolbar ---------- */
+.toolbar{
+  position:sticky;top:0;z-index:20;background:var(--bg);
+  padding:16px 0 14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+  border-bottom:1px solid var(--line);
+}
+input[type="search"],select{
+  font-family:inherit;font-size:15px;color:var(--ink);
+  background:var(--surface);border:1px solid transparent;border-radius:999px;
+  padding:11px 18px;min-height:46px;
+}
+input[type="search"]{min-width:240px;flex:1 1 240px;max-width:340px}
+select{cursor:pointer}
+input::placeholder{color:var(--ink-3)}
+input:hover,select:hover{border-color:var(--line)}
+input:focus-visible,select:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:2px solid var(--focus);outline-offset:2px;
+}
+.btn{
+  font-family:inherit;font-size:15px;font-weight:600;
+  border-radius:999px;padding:11px 20px;min-height:46px;cursor:pointer;
+}
+.btn-primary{color:var(--on-green);background:var(--green);border:0}
+.btn-primary:hover{filter:brightness(.95)}
+.btn-ghost{color:var(--ink-2);background:transparent;border:1px solid var(--line)}
+.btn-ghost:hover{color:var(--ink);border-color:var(--ink-3)}
+.count{margin-left:auto;font-size:14px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+
+/* ---------- brand groups ---------- */
+.brands{display:flex;flex-direction:column;gap:10px}
+.brand-group{background:var(--surface);border-radius:var(--radius-lg);overflow:hidden}
+.brand-group summary{
+  list-style:none;cursor:pointer;padding:16px 22px;
+  display:flex;align-items:center;gap:14px;
+}
+.brand-group summary::-webkit-details-marker{display:none}
+.brand-group summary:hover{background:var(--surface-2)}
+.chev{
+  flex:0 0 auto;width:10px;height:10px;border-right:2px solid var(--ink-3);
+  border-bottom:2px solid var(--ink-3);transform:rotate(-45deg);
+  transition:transform .18s ease;
+}
+.brand-group[open] > summary .chev{transform:rotate(45deg)}
+.bname{font-weight:600;font-size:17px;letter-spacing:-.015em;flex:1 1 auto}
+.bcount{font-size:13.5px;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.modellist{list-style:none;margin:0;padding:0 22px 8px;display:flex;flex-direction:column}
+.modellist li{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:11px 0;border-top:1px solid var(--line-soft);
+}
+.mname{font-weight:500;font-size:15px}
+mark{background:rgba(52,209,134,.3);color:inherit;border-radius:3px;padding:0 1px}
+.empty{
+  background:var(--surface);border-radius:var(--radius-lg);
+  padding:48px 24px;text-align:center;color:var(--ink-2);
+}
+
+/* ---------- checker ---------- */
+.checker{background:var(--surface);border-radius:var(--radius-lg);padding:28px;gap:18px}
+.chk-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.field{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--ink-2)}
+.field select{width:100%;background:var(--bg);border:1px solid var(--line)}
+.field select:disabled{opacity:.55;cursor:not-allowed}
+.chk-result{background:var(--hero-bg);color:var(--hero-ink);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:10px}
+.chk-result.waiting{background:var(--bg);color:var(--ink-2);border:1px dashed var(--line)}
+.chk-result .res-label{font-size:13px;font-weight:600;color:var(--hero-ink-2)}
+.chk-result .tags{justify-content:flex-start}
+.chk-result .tag{font-size:14px;padding:6px 14px}
+.chk-result .res-high{font-size:20px;font-weight:700;letter-spacing:-.015em}
+.chk-result .res-note{font-size:13.5px;color:var(--hero-ink-2);margin:0}
+.chk-missing{margin:0;font-size:14px;color:var(--ink-2)}
+.chk-missing a{color:inherit;font-weight:600;text-decoration:underline;text-decoration-color:var(--green);text-underline-offset:3px}
+
+.contact{background:var(--hero-bg);color:var(--hero-ink);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.contact h2{color:var(--hero-ink)}
+.contact p{margin:6px 0 0;color:var(--hero-ink-2);max-width:52ch}
+.contact .btn{display:inline-flex;align-items:center;text-decoration:none}
+footer{background:var(--surface);padding:40px 24px 56px}
+.footer-inner{
+  max-width:78ch;margin:0 auto;display:flex;flex-direction:column;gap:10px;
+  font-size:13.5px;color:var(--ink-3);line-height:1.55;
+}
+@media (max-width:640px){
+  .hero{padding:20px 18px 52px}
+  .wrap{padding:40px 18px 64px;gap:44px}
+  .count{margin-left:0;width:100%}
+  .brand-group summary{padding:14px 18px;flex-wrap:wrap}
+  .modellist{padding:0 18px 8px}
+  .bname{flex:1 1 100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="topbar">
+      <div class="langswitch" role="group" data-i18n-label="langGroup">
+        <button type="button" id="lang-en" lang="en" aria-pressed="true">EN</button>
+        <button type="button" id="lang-nl" lang="nl" aria-pressed="false">NL</button>
+      </div>
+    </div>
+    <h1 data-i18n="h1"></h1>
+    <p data-i18n="intro"></p>
+    <span class="effective"><span class="dot" aria-hidden="true"></span><span data-i18n="effective"></span></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="checker" aria-labelledby="chk-heading">
+    <h2 id="chk-heading" data-i18n="chkTitle"></h2>
+    <p class="lede" data-i18n="chkLede"></p>
+    <div class="chk-fields">
+      <label class="field"><span data-i18n="brandLabel"></span><select id="chkBrand"></select></label>
+      <label class="field"><span data-i18n="modelLabel"></span><select id="chkModel"></select></label>
+      <label class="field"><span data-i18n="yearLabel"></span><select id="chkYear"></select></label>
+    </div>
+    <div class="chk-result waiting" id="chkResult" aria-live="polite"></div>
+    <p class="chk-missing"><span data-i18n="chkMissing"></span> <a id="chkMissingLink" href="mailto:netherlands@bolt.eu" data-i18n="chkMissingLink"></a></p>
+  </section>
+
+  <section class="notice" aria-labelledby="notice-heading">
+    <h2 id="notice-heading" data-i18n="noticeTitle"></h2>
+    <ul>
+      <li data-i18n="notice1"></li>
+      <li data-i18n="notice2"></li>
+      <li data-i18n="notice3"></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 data-i18n="rulesTitle"></h2>
+    <p class="lede" data-i18n="rulesLede"></p>
+    <div class="rules">
+      <div class="rule">
+        <div><span class="tag premium">Premium</span></div>
+        <p class="cap"><span data-i18n="maxAge"></span> <b data-i18n="sixYears"></b></p>
+        <div class="chain">
+          <div class="step"><span class="age" data-i18n="age06"></span><span class="to">&rarr;</span><span class="tag premium">Premium</span></div>
+          <div class="step"><span class="age" data-i18n="age7"></span><span class="to">&rarr;</span><span class="tag comfort">Comfort</span></div>
+          <div class="step"><span class="age" data-i18n="age8"></span><span class="to">&rarr;</span><span class="tag standard">Bolt</span></div>
+        </div>
+      </div>
+      <div class="rule">
+        <div><span class="tag comfort">Comfort</span></div>
+        <p class="cap"><span data-i18n="maxAge"></span> <b data-i18n="sevenYears"></b></p>
+        <div class="chain">
+          <div class="step"><span class="age" data-i18n="age07"></span><span class="to">&rarr;</span><span class="tag comfort">Comfort</span></div>
+          <div class="step"><span class="age" data-i18n="age8"></span><span class="to">&rarr;</span><span class="tag standard">Bolt</span></div>
+        </div>
+      </div>
+      <div class="rule">
+        <div><span class="tag standard">Bolt</span></div>
+        <p class="cap" data-i18n="noStepDown"></p>
+        <div class="chain">
+          <div class="step"><span class="age" data-i18n="anyAge"></span><span class="to">&rarr;</span><span class="tag standard">Bolt</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 id="list-heading" data-i18n="listTitle"></h2>
+    <p class="lede" data-i18n="listLede"></p>
+
+    <div class="toolbar">
+      <input type="search" id="q" autocomplete="off">
+      <select id="cat">
+        <option value="" data-i18n="allCats"></option>
+        <option value="premium">Premium</option>
+        <option value="comfort">Comfort</option>
+        <option value="standard">Bolt</option>
+      </select>
+      <button class="btn btn-ghost" id="toggleAll" type="button"></button>
+      <button class="btn btn-primary" id="reset" type="button" data-i18n="clear"></button>
+      
+    </div>
+
+    <div class="brands" id="brands" aria-labelledby="list-heading"></div>
+  </section>
+
+  <section class="contact">
+    <div>
+      <h2 data-i18n="contactTitle"></h2>
+      <p data-i18n="contactText"></p>
+    </div>
+    <a class="btn btn-primary" id="supportLink" href="mailto:netherlands@bolt.eu" target="_blank" rel="noopener" data-i18n="contactBtn"></a>
+  </section>
+</div>
+
+
+<script>
+const DATA = [{"m":"AIWAYS U5","b":"AIWAYS","c":"comfort"},{"m":"Abzat AB200-8","b":"Abzat","c":"standard"},{"m":"Audi A3","b":"Audi","c":"standard"},{"m":"Audi A4","b":"Audi","c":"comfort"},{"m":"Audi A4 Allroad","b":"Audi","c":"comfort"},{"m":"Audi A4 Avant","b":"Audi","c":"comfort"},{"m":"Audi A5","b":"Audi","c":"comfort"},{"m":"Audi A5 Sportback","b":"Audi","c":"comfort"},{"m":"Audi A6","b":"Audi","c":"premium"},{"m":"Audi A6 Allroad","b":"Audi","c":"premium"},{"m":"Audi A6 Avant","b":"Audi","c":"premium"},{"m":"Audi A6 e-tron","b":"Audi","c":"premium"},{"m":"Audi A7","b":"Audi","c":"premium"},{"m":"Audi A8L","b":"Audi","c":"premium"},{"m":"Audi Q2","b":"Audi","c":"standard"},{"m":"Audi Q3","b":"Audi","c":"comfort"},{"m":"Audi Q4 e-tron","b":"Audi","c":"comfort"},{"m":"Audi Q5","b":"Audi","c":"premium"},{"m":"Audi Q6 e-tron","b":"Audi","c":"premium"},{"m":"Audi Q7","b":"Audi","c":"premium"},{"m":"Audi Q8","b":"Audi","c":"premium"},{"m":"Audi Q8 e-tron","b":"Audi","c":"premium"},{"m":"Audi e-tron","b":"Audi","c":"comfort"},{"m":"Audi e-tron Sportback","b":"Audi","c":"comfort"},{"m":"BAW Reach","b":"BAW","c":"standard"},{"m":"BMW 2 series Active Tourer","b":"BMW","c":"standard"},{"m":"BMW 2 series Gran Tourer","b":"BMW","c":"comfort"},{"m":"BMW 3 series","b":"BMW","c":"comfort"},{"m":"BMW 3 series Gran Turismo","b":"BMW","c":"comfort"},{"m":"BMW 316","b":"BMW","c":"comfort"},{"m":"BMW 318","b":"BMW","c":"comfort"},{"m":"BMW 320","b":"BMW","c":"comfort"},{"m":"BMW 330","b":"BMW","c":"comfort"},{"m":"BMW 4 series Gran Coupé","b":"BMW","c":"premium"},{"m":"BMW 4 series GranCoupe","b":"BMW","c":"premium"},{"m":"BMW 420","b":"BMW","c":"premium"},{"m":"BMW 5 series","b":"BMW","c":"premium"},{"m":"BMW 518","b":"BMW","c":"premium"},{"m":"BMW 520","b":"BMW","c":"premium"},{"m":"BMW 525","b":"BMW","c":"premium"},{"m":"BMW 530","b":"BMW","c":"premium"},{"m":"BMW 530e iPerformance","b":"BMW","c":"premium"},{"m":"BMW 535","b":"BMW","c":"premium"},{"m":"BMW 7 series","b":"BMW","c":"premium"},{"m":"BMW 730","b":"BMW","c":"premium"},{"m":"BMW 745","b":"BMW","c":"premium"},{"m":"BMW X1","b":"BMW","c":"comfort"},{"m":"BMW X3","b":"BMW","c":"premium"},{"m":"BMW X5","b":"BMW","c":"premium"},{"m":"BMW i4","b":"BMW","c":"premium"},{"m":"BMW i5","b":"BMW","c":"premium"},{"m":"BMW i7","b":"BMW","c":"premium"},{"m":"BMW iX","b":"BMW","c":"premium"},{"m":"BMW iX1","b":"BMW","c":"comfort"},{"m":"BMW iX2","b":"BMW","c":"comfort"},{"m":"BMW iX3","b":"BMW","c":"premium"},{"m":"BYD Atto 2","b":"BYD","c":"standard"},{"m":"BYD Atto 3","b":"BYD","c":"comfort"},{"m":"BYD Dolphin","b":"BYD","c":"standard"},{"m":"BYD Han","b":"BYD","c":"comfort"},{"m":"BYD S2","b":"BYD","c":"standard"},{"m":"BYD Seal","b":"BYD","c":"comfort"},{"m":"BYD Seal 06 GT","b":"BYD","c":"comfort"},{"m":"BYD Seal 6 Touring","b":"BYD","c":"standard"},{"m":"BYD Seal U","b":"BYD","c":"comfort"},{"m":"BYD Sealion 7","b":"BYD","c":"comfort"},{"m":"BYD Tang","b":"BYD","c":"comfort"},{"m":"Changan Deepal S05","b":"Changan","c":"comfort"},{"m":"Chevrolet Cruze","b":"Chevrolet","c":"standard"},{"m":"Citroen C3","b":"Citroen","c":"standard"},{"m":"Citroen C4","b":"Citroen","c":"standard"},{"m":"Citroen C4 Cactus","b":"Citroen","c":"standard"},{"m":"Citroen C4 Picasso","b":"Citroen","c":"standard"},{"m":"Citroen C5","b":"Citroen","c":"standard"},{"m":"Citroen Grand C4 Picasso","b":"Citroen","c":"comfort"},{"m":"Citroen Grand C4 SpaceTourer","b":"Citroen","c":"standard"},{"m":"Citroen Jumpy","b":"Citroen","c":"comfort"},{"m":"Citroen Spacetourer","b":"Citroen","c":"comfort"},{"m":"Citroen ë-C4","b":"Citroen","c":"standard"},{"m":"Citroen ë-Jumpy","b":"Citroen","c":"comfort"},{"m":"Citroen ë-SpaceTourer","b":"Citroen","c":"comfort"},{"m":"Cupra Born","b":"Cupra","c":"comfort"},{"m":"Cupra Formentor","b":"Cupra","c":"standard"},{"m":"Cupra León","b":"Cupra","c":"standard"},{"m":"Cupra Tavascan","b":"Cupra","c":"comfort"},{"m":"DS 7 Crossback E-Tense","b":"DS","c":"comfort"},{"m":"Dacia Duster","b":"Dacia","c":"standard"},{"m":"Dacia Jogger","b":"Dacia","c":"comfort"},{"m":"Dacia Lodgy","b":"Dacia","c":"standard"},{"m":"Dacia Logan","b":"Dacia","c":"standard"},{"m":"FAW EHS9","b":"FAW","c":"premium"},{"m":"Fiat 500X","b":"Fiat","c":"standard"},{"m":"Fiat Scudo","b":"Fiat","c":"standard"},{"m":"Fiat Tipo","b":"Fiat","c":"standard"},{"m":"Ford C-Max","b":"Ford","c":"standard"},{"m":"Ford Capri","b":"Ford","c":"comfort"},{"m":"Ford Explorer","b":"Ford","c":"comfort"},{"m":"Ford Falcon","b":"Ford","c":"standard"},{"m":"Ford Focus","b":"Ford","c":"standard"},{"m":"Ford Focus Estate","b":"Ford","c":"standard"},{"m":"Ford Focus ST Wagon","b":"Ford","c":"standard"},{"m":"Ford Galaxy","b":"Ford","c":"standard"},{"m":"Ford Kuga","b":"Ford","c":"standard"},{"m":"Ford Mondeo","b":"Ford","c":"comfort"},{"m":"Ford Mustang","b":"Ford","c":"comfort"},{"m":"Ford Mustang Mach-E","b":"Ford","c":"comfort"},{"m":"Ford S-Max","b":"Ford","c":"standard"},{"m":"Ford Tourneo","b":"Ford","c":"comfort"},{"m":"Ford Tourneo Custom","b":"Ford","c":"standard"},{"m":"Ford Transit","b":"Ford","c":"standard"},{"m":"Ford Transit Custom","b":"Ford","c":"standard"},{"m":"Genesis G80 Electrified","b":"Genesis","c":"comfort"},{"m":"Genesis GV60","b":"Genesis","c":"comfort"},{"m":"Genesis GV70 Electrified","b":"Genesis","c":"comfort"},{"m":"Honda Civic","b":"Honda","c":"standard"},{"m":"Honda Insight","b":"Honda","c":"standard"},{"m":"Hyundai IONIQ 5","b":"Hyundai","c":"comfort"},{"m":"Hyundai IONIQ 6","b":"Hyundai","c":"comfort"},{"m":"Hyundai IONIQ 9","b":"Hyundai","c":"comfort"},{"m":"Hyundai Ioniq","b":"Hyundai","c":"standard"},{"m":"Hyundai Ioniq Electric","b":"Hyundai","c":"standard"},{"m":"Hyundai Kona","b":"Hyundai","c":"standard"},{"m":"Hyundai Kona EV","b":"Hyundai","c":"standard"},{"m":"Hyundai Kona Electric","b":"Hyundai","c":"standard"},{"m":"Hyundai Nexo","b":"Hyundai","c":"comfort"},{"m":"Hyundai SANTAFE","b":"Hyundai","c":"comfort"},{"m":"Hyundai Santa Fe","b":"Hyundai","c":"comfort"},{"m":"Hyundai Tucson","b":"Hyundai","c":"standard"},{"m":"Hyundai i30","b":"Hyundai","c":"standard"},{"m":"Hyundai i30 Combi","b":"Hyundai","c":"standard"},{"m":"Hyundai i40","b":"Hyundai","c":"standard"},{"m":"Hyundai ix35","b":"Hyundai","c":"standard"},{"m":"Jaecoo 5 EV","b":"Jaecoo","c":"standard"},{"m":"Jaguar F-Pace","b":"Jaguar","c":"comfort"},{"m":"Jaguar I-Pace","b":"Jaguar","c":"comfort"},{"m":"Jaguar XE","b":"Jaguar","c":"comfort"},{"m":"Jaguar XF","b":"Jaguar","c":"comfort"},{"m":"Jeep Compass","b":"Jeep","c":"standard"},{"m":"KGM Torres EVX","b":"KGM","c":"comfort"},{"m":"Kia Carens","b":"Kia","c":"standard"},{"m":"Kia Ceed","b":"Kia","c":"standard"},{"m":"Kia Ceed Sportswagon","b":"Kia","c":"comfort"},{"m":"Kia EV3","b":"Kia","c":"comfort"},{"m":"Kia EV4","b":"Kia","c":"comfort"},{"m":"Kia EV5","b":"Kia","c":"comfort"},{"m":"Kia EV6","b":"Kia","c":"comfort"},{"m":"Kia EV6 GT","b":"Kia","c":"comfort"},{"m":"Kia EV9","b":"Kia","c":"comfort"},{"m":"Kia Niro","b":"Kia","c":"standard"},{"m":"Kia Optima","b":"Kia","c":"standard"},{"m":"Kia Sorento","b":"Kia","c":"comfort"},{"m":"Kia Sportage","b":"Kia","c":"standard"},{"m":"Kia XCeed","b":"Kia","c":"standard"},{"m":"Kia e-Niro","b":"Kia","c":"comfort"},{"m":"Lancia Voyager","b":"Lancia","c":"standard"},{"m":"Land Rover Range Rover Evoque","b":"Land Rover","c":"comfort"},{"m":"Lexus CT","b":"Lexus","c":"standard"},{"m":"Lexus CT200h","b":"Lexus","c":"standard"},{"m":"Lexus ES300h","b":"Lexus","c":"premium"},{"m":"Lexus NX","b":"Lexus","c":"comfort"},{"m":"Lexus RX","b":"Lexus","c":"comfort"},{"m":"Lexus RZ","b":"Lexus","c":"comfort"},{"m":"Lynk&Co 01","b":"Lynk&Co","c":"comfort"},{"m":"MG 4 EV","b":"MG","c":"standard"},{"m":"MG 5","b":"MG","c":"standard"},{"m":"MG 5 EV","b":"MG","c":"standard"},{"m":"MG IM5","b":"MG","c":"comfort"},{"m":"MG M5","b":"MG","c":"standard"},{"m":"MG MG eHS","b":"MG","c":"standard"},{"m":"MG MG5","b":"MG","c":"standard"},{"m":"MG Marvel R","b":"MG","c":"comfort"},{"m":"MG S5 EV","b":"MG","c":"standard"},{"m":"MG S6 SUV","b":"MG","c":"comfort"},{"m":"MG ZS","b":"MG","c":"standard"},{"m":"MG ZS EV","b":"MG","c":"standard"},{"m":"Mazda 3 Hatchback","b":"Mazda","c":"standard"},{"m":"Mazda 6","b":"Mazda","c":"comfort"},{"m":"Mazda 6e","b":"Mazda","c":"comfort"},{"m":"Mazda CX-60","b":"Mazda","c":"comfort"},{"m":"Mazda CX-80","b":"Mazda","c":"comfort"},{"m":"Mazda EZ-6","b":"Mazda","c":"standard"},{"m":"Mercedes AMG GLE Coupé","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz 200","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz 200c","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz A-class","b":"Mercedes-Benz","c":"standard"},{"m":"Mercedes-Benz A200","b":"Mercedes-Benz","c":"standard"},{"m":"Mercedes-Benz A250","b":"Mercedes-Benz","c":"standard"},{"m":"Mercedes-Benz B-class","b":"Mercedes-Benz","c":"standard"},{"m":"Mercedes-Benz B180","b":"Mercedes-Benz","c":"standard"},{"m":"Mercedes-Benz B200","b":"Mercedes-Benz","c":"standard"},{"m":"Mercedes-Benz B220","b":"Mercedes-Benz","c":"standard"},{"m":"Mercedes-Benz C 180","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz C-class","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz C180","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz C200","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz C220","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz C250","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz C300","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz C350","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz CLA","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz CLA Shooting Brake","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz CLA200","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz CLA220","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz CLS","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz Citan","b":"Mercedes-Benz","c":"standard"},{"m":"Mercedes-Benz E 320","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz E-class","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz E-class Limousine","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz E200","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz E220","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz E250","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz E300","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz E350","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz E400","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz EQA","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz EQB","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz EQC","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz EQC 400","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz EQE","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz EQE SUV","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz EQS","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz EQS SUV","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz EQV","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz EQV 300","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz GLA","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz GLA220","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz GLB","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz GLC","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz GLC Coupé","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz GLC220","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz GLC250d","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz GLC350e","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz GLE","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz GLK","b":"Mercedes-Benz","c":"standard"},{"m":"Mercedes-Benz R350","b":"Mercedes-Benz","c":"standard"},{"m":"Mercedes-Benz S-class","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz S350","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz S580","b":"Mercedes-Benz","c":"premium"},{"m":"Mercedes-Benz Sprinter","b":"Mercedes-Benz","c":"standard"},{"m":"Mercedes-Benz V-Klasse","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz V-class","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz V220","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz V250","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz V300","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz VITO TAXI","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz VITO TAXI+","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz Viano","b":"Mercedes-Benz","c":"standard"},{"m":"Mercedes-Benz Vito","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz Vito 113","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz Vito 114","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz Vito 116","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz Vito 119","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz Vito 220","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz Vito Tourer","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz e-Vito","b":"Mercedes-Benz","c":"comfort"},{"m":"Mercedes-Benz eVito Tourer","b":"Mercedes-Benz","c":"comfort"},{"m":"Mitsubishi ASX","b":"Mitsubishi","c":"standard"},{"m":"Mitsubishi Outlander","b":"Mitsubishi","c":"comfort"},{"m":"Mitsubishi Outlander Sport","b":"Mitsubishi","c":"standard"},{"m":"Nio EL6","b":"Nio","c":"comfort"},{"m":"Nio EL7","b":"Nio","c":"comfort"},{"m":"Nio ET5 Touring","b":"Nio","c":"comfort"},{"m":"Nio ET7","b":"Nio","c":"premium"},{"m":"Nissan Ariya","b":"Nissan","c":"comfort"},{"m":"Nissan Leaf","b":"Nissan","c":"standard"},{"m":"Nissan NV200","b":"Nissan","c":"standard"},{"m":"Nissan Qashqai","b":"Nissan","c":"standard"},{"m":"Nissan X-Trail","b":"Nissan","c":"comfort"},{"m":"Nissan e-NV200 Dynamo","b":"Nissan","c":"standard"},{"m":"Omoda 5","b":"Omoda","c":"standard"},{"m":"Omoda 9","b":"Omoda","c":"standard"},{"m":"Opel Ampera","b":"Opel","c":"standard"},{"m":"Opel Ampera-e","b":"Opel","c":"standard"},{"m":"Opel Astra","b":"Opel","c":"standard"},{"m":"Opel Astra Sports Tourer","b":"Opel","c":"standard"},{"m":"Opel Corsa","b":"Opel","c":"standard"},{"m":"Opel Insignia","b":"Opel","c":"standard"},{"m":"Opel Insignia Sports Tourer","b":"Opel","c":"comfort"},{"m":"Opel Mokka-e","b":"Opel","c":"standard"},{"m":"Opel Vivaro","b":"Opel","c":"comfort"},{"m":"Opel Vivaro-B","b":"Opel","c":"standard"},{"m":"Opel Zafira","b":"Opel","c":"standard"},{"m":"Peugeot 107","b":"Peugeot","c":"standard"},{"m":"Peugeot 2008","b":"Peugeot","c":"standard"},{"m":"Peugeot 208","b":"Peugeot","c":"standard"},{"m":"Peugeot 3008","b":"Peugeot","c":"standard"},{"m":"Peugeot 308","b":"Peugeot","c":"standard"},{"m":"Peugeot 308 SW","b":"Peugeot","c":"standard"},{"m":"Peugeot 5008","b":"Peugeot","c":"standard"},{"m":"Peugeot 508","b":"Peugeot","c":"standard"},{"m":"Peugeot 508 SW","b":"Peugeot","c":"standard"},{"m":"Peugeot e-2008","b":"Peugeot","c":"standard"},{"m":"Peugeot e-3008","b":"Peugeot","c":"standard"},{"m":"Peugeot e-5008","b":"Peugeot","c":"standard"},{"m":"Polestar 2","b":"Polestar","c":"comfort"},{"m":"Polestar 3","b":"Polestar","c":"comfort"},{"m":"Polestar 4","b":"Polestar","c":"comfort"},{"m":"Porsche Taycan","b":"Porsche","c":"premium"},{"m":"Renault Arkana","b":"Renault","c":"standard"},{"m":"Renault Captur","b":"Renault","c":"standard"},{"m":"Renault Clio","b":"Renault","c":"standard"},{"m":"Renault Clio Estate","b":"Renault","c":"standard"},{"m":"Renault Espace","b":"Renault","c":"standard"},{"m":"Renault Grand Espace","b":"Renault","c":"standard"},{"m":"Renault Grand Scénic","b":"Renault","c":"comfort"},{"m":"Renault Kadjar","b":"Renault","c":"standard"},{"m":"Renault Laguna","b":"Renault","c":"standard"},{"m":"Renault Mégane","b":"Renault","c":"standard"},{"m":"Renault Mégane E-Tech Electric","b":"Renault","c":"standard"},{"m":"Renault Mégane Grandtour","b":"Renault","c":"standard"},{"m":"Renault Mégane Scénic","b":"Renault","c":"standard"},{"m":"Renault Mégane Sedan","b":"Renault","c":"standard"},{"m":"Renault Safrane","b":"Renault","c":"standard"},{"m":"Renault Scenic E-Tech","b":"Renault","c":"standard"},{"m":"Renault Scénic","b":"Renault","c":"standard"},{"m":"Renault Talisman","b":"Renault","c":"standard"},{"m":"Renault Talisman Berline","b":"Renault","c":"standard"},{"m":"Seat Alhambra","b":"Seat","c":"comfort"},{"m":"Seat Altea XL","b":"Seat","c":"standard"},{"m":"Seat Arona","b":"Seat","c":"standard"},{"m":"Seat Ateca","b":"Seat","c":"standard"},{"m":"Seat Ibiza","b":"Seat","c":"standard"},{"m":"Seat Leon SportsTourer","b":"Seat","c":"standard"},{"m":"Seat León","b":"Seat","c":"standard"},{"m":"Seat León Estate","b":"Seat","c":"standard"},{"m":"Skoda Elroq","b":"Skoda","c":"comfort"},{"m":"Skoda Enyaq","b":"Skoda","c":"comfort"},{"m":"Skoda Enyaq Coupé","b":"Skoda","c":"comfort"},{"m":"Skoda Enyaq iV","b":"Skoda","c":"comfort"},{"m":"Skoda Fabia","b":"Skoda","c":"standard"},{"m":"Skoda Fabia Combi","b":"Skoda","c":"standard"},{"m":"Skoda Karoq","b":"Skoda","c":"standard"},{"m":"Skoda Kodiaq","b":"Skoda","c":"standard"},{"m":"Skoda Octavia","b":"Skoda","c":"standard"},{"m":"Skoda Octavia Estate","b":"Skoda","c":"standard"},{"m":"Skoda Rapid","b":"Skoda","c":"standard"},{"m":"Skoda Rapid Spaceback","b":"Skoda","c":"standard"},{"m":"Skoda Scala","b":"Skoda","c":"standard"},{"m":"Skoda Superb","b":"Skoda","c":"comfort"},{"m":"Suzuki Swace","b":"Suzuki","c":"standard"},{"m":"Tesla Model 3","b":"Tesla","c":"comfort"},{"m":"Tesla Model S","b":"Tesla","c":"comfort"},{"m":"Tesla Model X","b":"Tesla","c":"comfort"},{"m":"Tesla Model Y","b":"Tesla","c":"premium"},{"m":"Toyota Aerio","b":"Toyota","c":"standard"},{"m":"Toyota Auris","b":"Toyota","c":"standard"},{"m":"Toyota Avensis","b":"Toyota","c":"standard"},{"m":"Toyota Avensis Verso","b":"Toyota","c":"standard"},{"m":"Toyota C-HR","b":"Toyota","c":"comfort"},{"m":"Toyota C-HR+","b":"Toyota","c":"comfort"},{"m":"Toyota Camry","b":"Toyota","c":"standard"},{"m":"Toyota Corolla","b":"Toyota","c":"standard"},{"m":"Toyota Corolla Cross","b":"Toyota","c":"standard"},{"m":"Toyota Corolla Hatchback","b":"Toyota","c":"standard"},{"m":"Toyota Corolla Kombi","b":"Toyota","c":"standard"},{"m":"Toyota Corolla Sedan","b":"Toyota","c":"standard"},{"m":"Toyota Corolla Touring","b":"Toyota","c":"standard"},{"m":"Toyota Corona","b":"Toyota","c":"comfort"},{"m":"Toyota Prius","b":"Toyota","c":"standard"},{"m":"Toyota Prius Alpha","b":"Toyota","c":"standard"},{"m":"Toyota Prius PHEV","b":"Toyota","c":"standard"},{"m":"Toyota Prius Plus","b":"Toyota","c":"comfort"},{"m":"Toyota ProAce","b":"Toyota","c":"comfort"},{"m":"Toyota ProAce EV","b":"Toyota","c":"standard"},{"m":"Toyota ProAce Verso","b":"Toyota","c":"comfort"},{"m":"Toyota RAV4","b":"Toyota","c":"comfort"},{"m":"Toyota Touring","b":"Toyota","c":"standard"},{"m":"Toyota Urban Cruiser","b":"Toyota","c":"standard"},{"m":"Toyota Yaris Cross","b":"Toyota","c":"standard"},{"m":"Toyota bZ4X","b":"Toyota","c":"comfort"},{"m":"Volkswagen Arteon","b":"Volkswagen","c":"comfort"},{"m":"Volkswagen Caddy","b":"Volkswagen","c":"comfort"},{"m":"Volkswagen Caddy Maxi","b":"Volkswagen","c":"comfort"},{"m":"Volkswagen Crafter","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Gol","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Gol Sedan / Voyage","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Golf","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Golf GTE","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Golf Plus","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Golf Sportsvan","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Golf Variant","b":"Volkswagen","c":"standard"},{"m":"Volkswagen ID.3","b":"Volkswagen","c":"comfort"},{"m":"Volkswagen ID.4","b":"Volkswagen","c":"comfort"},{"m":"Volkswagen ID.5","b":"Volkswagen","c":"comfort"},{"m":"Volkswagen ID.7","b":"Volkswagen","c":"comfort"},{"m":"Volkswagen ID.7 Tourer","b":"Volkswagen","c":"comfort"},{"m":"Volkswagen Jetta","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Kombi","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Multivan","b":"Volkswagen","c":"comfort"},{"m":"Volkswagen Passat","b":"Volkswagen","c":"comfort"},{"m":"Volkswagen Passat CC","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Passat Combi","b":"Volkswagen","c":"comfort"},{"m":"Volkswagen Passat Variant","b":"Volkswagen","c":"comfort"},{"m":"Volkswagen Polo","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Sharan","b":"Volkswagen","c":"comfort"},{"m":"Volkswagen T-Roc","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Taigo","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Tayron","b":"Volkswagen","c":"comfort"},{"m":"Volkswagen Tiguan","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Touran","b":"Volkswagen","c":"comfort"},{"m":"Volkswagen Transporter","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Transporter Caravelle","b":"Volkswagen","c":"standard"},{"m":"Volkswagen Transporter Kombi","b":"Volkswagen","c":"standard"},{"m":"Volvo EC40","b":"Volvo","c":"comfort"},{"m":"Volvo ES90","b":"Volvo","c":"premium"},{"m":"Volvo EX30","b":"Volvo","c":"standard"},{"m":"Volvo EX40","b":"Volvo","c":"comfort"},{"m":"Volvo EX90","b":"Volvo","c":"premium"},{"m":"Volvo S60","b":"Volvo","c":"comfort"},{"m":"Volvo S80","b":"Volvo","c":"standard"},{"m":"Volvo S90","b":"Volvo","c":"premium"},{"m":"Volvo V40","b":"Volvo","c":"standard"},{"m":"Volvo V50","b":"Volvo","c":"standard"},{"m":"Volvo V60","b":"Volvo","c":"comfort"},{"m":"Volvo V70","b":"Volvo","c":"standard"},{"m":"Volvo V90","b":"Volvo","c":"premium"},{"m":"Volvo XC40","b":"Volvo","c":"comfort"},{"m":"Volvo XC40 Recharge","b":"Volvo","c":"comfort"},{"m":"Volvo XC60","b":"Volvo","c":"comfort"},{"m":"Volvo XC90","b":"Volvo","c":"premium"},{"m":"Xpeng G6","b":"Xpeng","c":"comfort"},{"m":"Xpeng G9","b":"Xpeng","c":"comfort"},{"m":"Xpeng P7","b":"Xpeng","c":"comfort"},{"m":"Xpeng X9","b":"Xpeng","c":"comfort"},{"m":"Zeekr 001","b":"Zeekr","c":"premium"},{"m":"Zeekr 009","b":"Zeekr","c":"comfort"},{"m":"Zeekr 7X","b":"Zeekr","c":"comfort"},{"m":"Zeekr X","b":"Zeekr","c":"standard"}];
+const ORDER = {premium:3, comfort:2, standard:1};
+const TIERS = ['standard', 'comfort', 'premium'];
+
+// A model cleared for a tier is also cleared for every tier below it, so the
+// ladder is cumulative: a Premium car can serve Standard and Comfort too.
+const eligible = top => TIERS.slice(0, ORDER[top]);
+const LABEL = {standard:'Bolt', comfort:'Comfort', premium:'Premium'};
+
+// Age rules for the checker. Age is counted as (year) - (year of first registration),
+// from the year the rules start.
+const RULES_FROM = 2027, PREMIUM_MAX_AGE = 6, COMFORT_MAX_AGE = 7, OLDEST_YEAR = 2000;
+const REF_YEAR = Math.max(new Date().getFullYear(), RULES_FROM);
+const BRANDS = [...new Set(DATA.map(x => x.b))].sort((a, b) => a.localeCompare(b));
+
+const I18N = {
+  en: {
+    langGroup: 'Language',
+    chkTitle: 'Check your car',
+    chkLede: 'Choose your brand, model and the year your car was first registered to see which categories it can drive in.',
+    brandLabel: 'Brand', modelLabel: 'Model', yearLabel: 'Year of first registration',
+    choose: 'Choose…', chooseBrandFirst: 'Choose a brand first',
+    resPrompt: 'Your result will show here.',
+    resTitle: 'Your car can drive in',
+    resHigh: c => 'Highest category: ' + c,
+    resAge: (a, y) => 'Based on a car age of ' + a + (a === 1 ? ' year' : ' years') + ' in ' + y + '.',
+    resStep: (from, to) => 'This model qualifies for ' + from + ', but at this age it moves to ' + to + '.',
+    chkMissing: "Can't find your car?", chkMissingLink: 'Contact us',
+    h1: 'Bolt Eligibility List',
+    intro: 'Every vehicle model in the Dutch fleet, the categories it can be used for, and the age at which it steps down a tier.',
+    rulesTitle: 'How vehicle age changes the category',
+    rulesLede: "A car that ages past its category's limit moves down one tier rather than dropping off the platform.",
+    maxAge: 'Maximum age', sixYears: '6 years', sevenYears: '7 years',
+    age06: '0–6 yrs', age07: '0–7 yrs', age7: '7 yrs', age8: '8+ yrs',
+    noStepDown: 'No age step-down', anyAge: 'Any age',
+    listTitle: 'Models by brand',
+    listLede: 'Open a brand to see its models, or search across all of them. Each model lists every category it can be used for.',
+    searchPh: 'Search a model', searchLabel: 'Search a model',
+    allCats: 'All categories', catLabel: 'Filter by category',
+    clear: 'Clear', expandAll: 'Expand all', collapseAll: 'Collapse all',
+    noMatch: 'No models match these filters.',
+    effective: 'Effective from 1 January 2027',
+    noticeTitle: 'What this means for you',
+    notice1: 'Until 31 December 2026, your current category stays the same.',
+    notice2: 'From 1 January 2027, your car’s category follows this list.',
+    notice3: 'No action is needed, unless your car isn’t on the list. Then contact us using the button at the bottom of this page.',
+    contactTitle: "Couldn't find your vehicle here?",
+    contactText: 'Email Bolt Netherlands Driver Support with your car’s make, model and year, or reach us through Support in the Bolt Driver app.',
+    contactBtn: 'Contact us',
+    supportUrl: 'mailto:netherlands@bolt.eu?subject=' + encodeURIComponent('Vehicle not on the Eligibility List'),
+    count: (m, b) => m + (m === 1 ? ' model' : ' models') + ' · ' + b + (b === 1 ? ' brand' : ' brands'),
+    brandCount: n => n + (n === 1 ? ' model' : ' models'),
+  },
+  nl: {
+    langGroup: 'Taal',
+    chkTitle: 'Check je auto',
+    chkLede: 'Kies je merk, model en het jaar waarin je auto voor het eerst is geregistreerd om te zien in welke categorieën hij kan rijden.',
+    brandLabel: 'Merk', modelLabel: 'Model', yearLabel: 'Jaar van eerste registratie',
+    choose: 'Kies…', chooseBrandFirst: 'Kies eerst een merk',
+    resPrompt: 'Je resultaat verschijnt hier.',
+    resTitle: 'Je auto kan rijden in',
+    resHigh: c => 'Hoogste categorie: ' + c,
+    resAge: (a, y) => 'Op basis van een leeftijd van ' + a + ' jaar in ' + y + '.',
+    resStep: (from, to) => 'Dit model valt onder ' + from + ', maar door de leeftijd gaat het naar ' + to + '.',
+    chkMissing: 'Staat je auto er niet tussen?', chkMissingLink: 'Neem contact op',
+    h1: 'Bolt Eligibility List',
+    intro: 'Elk voertuigmodel in de Nederlandse vloot, de categorieën waarvoor het ingezet kan worden en de leeftijd waarop het een niveau zakt.',
+    rulesTitle: 'Hoe de leeftijd van een auto de categorie verandert',
+    rulesLede: 'Een auto die de leeftijdsgrens van zijn categorie voorbij is, zakt één niveau in plaats van van het platform te verdwijnen.',
+    maxAge: 'Maximale leeftijd', sixYears: '6 jaar', sevenYears: '7 jaar',
+    age06: '0–6 jaar', age07: '0–7 jaar', age7: '7 jaar', age8: '8+ jaar',
+    noStepDown: 'Geen verlaging door leeftijd', anyAge: 'Elke leeftijd',
+    listTitle: 'Modellen per merk',
+    listLede: 'Klap een merk open om de modellen te zien, of zoek in alle modellen. Bij elk model staan alle categorieën waarvoor het ingezet kan worden.',
+    searchPh: 'Zoek een model', searchLabel: 'Zoek een model',
+    allCats: 'Alle categorieën', catLabel: 'Filter op categorie',
+    clear: 'Wissen', expandAll: 'Alles uitklappen', collapseAll: 'Alles inklappen',
+    noMatch: 'Geen modellen gevonden met deze filters.',
+    effective: 'Geldig vanaf 1 januari 2027',
+    noticeTitle: 'Wat dit voor jou betekent',
+    notice1: 'Tot en met 31 december 2026 blijft je huidige categorie hetzelfde.',
+    notice2: 'Vanaf 1 januari 2027 volgt de categorie van je auto deze lijst.',
+    notice3: 'Je hoeft niets te doen, tenzij je auto niet op de lijst staat. Neem dan contact met ons op via de knop onderaan deze pagina.',
+    contactTitle: 'Staat jouw auto er niet tussen?',
+    contactText: 'Mail Bolt Nederland Chauffeurssupport met het merk, model en bouwjaar van je auto, of neem contact op via Support in de Bolt Driver-app.',
+    contactBtn: 'Neem contact op',
+    supportUrl: 'mailto:netherlands@bolt.eu?subject=' + encodeURIComponent('Voertuig staat niet op de Eligibility List'),
+    count: (m, b) => m + (m === 1 ? ' model' : ' modellen') + ' · ' + b + (b === 1 ? ' merk' : ' merken'),
+    brandCount: n => n + (n === 1 ? ' model' : ' modellen'),
+  }
+};
+
+const els = {
+  q: document.getElementById('q'),
+  cat: document.getElementById('cat'),
+  brands: document.getElementById('brands'),
+  reset: document.getElementById('reset'),
+  toggleAll: document.getElementById('toggleAll'),
+  en: document.getElementById('lang-en'),
+  chkBrand: document.getElementById('chkBrand'),
+  chkModel: document.getElementById('chkModel'),
+  chkYear: document.getElementById('chkYear'),
+  chkResult: document.getElementById('chkResult'),
+  chkMissingLink: document.getElementById('chkMissingLink'),
+  nl: document.getElementById('lang-nl')
+};
+
+let lang = 'en';
+let allOpen = false;
+const openBrands = new Set();
+
+try {
+  const saved = localStorage.getItem('bolt-nl-lang');
+  if (saved === 'nl' || saved === 'en') lang = saved;
+} catch (e) { /* storage unavailable; English stays */ }
+
+const t = () => I18N[lang];
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+
+function highlight(name, q){
+  if (!q) return esc(name);
+  const i = name.toLowerCase().indexOf(q);
+  if (i < 0) return esc(name);
+  return esc(name.slice(0, i)) + '<mark>' + esc(name.slice(i, i + q.length)) + '</mark>' + esc(name.slice(i + q.length));
+}
+
+function applyStatic(){
+  const d = t();
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = d[el.dataset.i18n];
+    if (typeof v === 'string') el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-label]').forEach(el => {
+    el.setAttribute('aria-label', d[el.dataset.i18nLabel]);
+  });
+  document.getElementById('supportLink').href = d.supportUrl;
+  els.q.placeholder = d.searchPh;
+  els.q.setAttribute('aria-label', d.searchLabel);
+  els.cat.setAttribute('aria-label', d.catLabel);
+  els.toggleAll.textContent = allOpen ? d.collapseAll : d.expandAll;
+  els.en.setAttribute('aria-pressed', String(lang === 'en'));
+  els.nl.setAttribute('aria-pressed', String(lang === 'nl'));
+}
+
+function render(){
+  const d = t();
+  const q = els.q.value.trim().toLowerCase();
+  const catF = els.cat.value;
+
+  // Filtering follows the tags: picking Comfort returns everything cleared for
+  // Comfort, which includes Premium cars.
+  const list = DATA.filter(x =>
+    (!q || x.m.toLowerCase().includes(q)) && (!catF || ORDER[x.c] >= ORDER[catF]));
+
+  const byBrand = new Map();
+  list.forEach(x => {
+    if (!byBrand.has(x.b)) byBrand.set(x.b, []);
+    byBrand.get(x.b).push(x);
+  });
+  const brands = [...byBrand.keys()].sort((a, b) => a.localeCompare(b));
+
+  els.toggleAll.textContent = allOpen ? d.collapseAll : d.expandAll;
+  els.toggleAll.hidden = !brands.length;
+
+  if (!brands.length){
+    els.brands.innerHTML = '<div class="empty">' + esc(d.noMatch) + '</div>';
+    return;
+  }
+
+  const filtering = Boolean(q || catF);
+
+  els.brands.innerHTML = brands.map(b => {
+    const models = byBrand.get(b).slice().sort((x, y) => x.m.localeCompare(y.m));
+    const open = (filtering || allOpen || openBrands.has(b)) ? ' open' : '';
+    return '<details class="brand-group"' + open + ' data-brand="' + esc(b) + '">'
+      + '<summary><span class="chev" aria-hidden="true"></span>'
+      + '<span class="bname">' + esc(b) + '</span>'
+      + '</summary>'
+      + '<ul class="modellist">'
+      + models.map(x => '<li><span class="mname">' + highlight(x.m, q) + '</span>'
+          + '<span class="tags">'
+          + eligible(x.c).map(k => '<span class="tag ' + k + '">' + LABEL[k] + '</span>').join('')
+          + '</span></li>').join('')
+      + '</ul></details>';
+  }).join('');
+
+  els.brands.querySelectorAll('details').forEach(el => {
+    el.addEventListener('toggle', () => {
+      if (el.open) openBrands.add(el.dataset.brand);
+      else openBrands.delete(el.dataset.brand);
+    });
+  });
+}
+
+function opt(value, label){ return '<option value="' + esc(String(value)) + '">' + esc(String(label)) + '</option>'; }
+
+function fillChecker(){
+  const d = t();
+  const b = els.chkBrand.value, m = els.chkModel.value, y = els.chkYear.value;
+  els.chkBrand.innerHTML = opt('', d.choose) + BRANDS.map(x => opt(x, x)).join('');
+  els.chkBrand.value = b;
+  fillModels(m);
+  let years = '';
+  for (let yr = REF_YEAR; yr >= OLDEST_YEAR; yr--) years += opt(yr, yr);
+  els.chkYear.innerHTML = opt('', d.choose) + years;
+  els.chkYear.value = y;
+  els.chkMissingLink.href = d.supportUrl;
+}
+
+function fillModels(keep){
+  const d = t();
+  const b = els.chkBrand.value;
+  if (!b){
+    els.chkModel.innerHTML = opt('', d.chooseBrandFirst);
+    els.chkModel.disabled = true;
+    return;
+  }
+  const models = DATA.filter(x => x.b === b).map(x => x.m).sort((p, q) => p.localeCompare(q));
+  els.chkModel.innerHTML = opt('', d.choose) + models.map(x => opt(x, x)).join('');
+  els.chkModel.disabled = false;
+  els.chkModel.value = models.includes(keep) ? keep : '';
+}
+
+function renderChecker(){
+  const d = t();
+  const car = DATA.find(x => x.b === els.chkBrand.value && x.m === els.chkModel.value);
+  const year = parseInt(els.chkYear.value, 10);
+  const box = els.chkResult;
+  if (!car || !year){
+    box.className = 'chk-result waiting';
+    box.textContent = d.resPrompt;
+    return;
+  }
+  const age = REF_YEAR - year;
+  const ageLevel = age <= PREMIUM_MAX_AGE ? 3 : age <= COMFORT_MAX_AGE ? 2 : 1;
+  const level = Math.min(ORDER[car.c], ageLevel);
+  const top = TIERS[level - 1];
+  let html = '<span class="res-label">' + esc(d.resTitle) + '</span>'
+    + '<span class="tags">' + TIERS.slice(0, level).map(k => '<span class="tag ' + k + '">' + LABEL[k] + '</span>').join('') + '</span>'
+    + '<span class="res-high">' + esc(d.resHigh(LABEL[top])) + '</span>'
+    + '<p class="res-note">' + esc(d.resAge(age, REF_YEAR)) + '</p>';
+  if (level < ORDER[car.c]) html += '<p class="res-note">' + esc(d.resStep(LABEL[car.c], LABEL[top])) + '</p>';
+  box.className = 'chk-result';
+  box.innerHTML = html;
+}
+
+els.chkBrand.addEventListener('change', () => { fillModels(''); renderChecker(); });
+els.chkModel.addEventListener('change', renderChecker);
+els.chkYear.addEventListener('change', renderChecker);
+
+function setLang(next){
+  lang = next;
+  try { localStorage.setItem('bolt-nl-lang', next); } catch (e) { /* not persisted */ }
+  applyStatic();
+  fillChecker();
+  renderChecker();
+  render();
+}
+
+els.en.addEventListener('click', () => setLang('en'));
+els.nl.addEventListener('click', () => setLang('nl'));
+['q','cat'].forEach(id => els[id].addEventListener('input', render));
+els.reset.addEventListener('click', () => {
+  els.q.value = ''; els.cat.value = '';
+  allOpen = false; openBrands.clear();
+  render();
+});
+els.toggleAll.addEventListener('click', () => {
+  allOpen = !allOpen;
+  openBrands.clear();
+  if (allOpen) [...new Set(DATA.map(x => x.b))].forEach(b => openBrands.add(b));
+  render();
+});
+
+applyStatic();
+fillChecker();
+renderChecker();
+render();
+</script>
+</body>
+</html>
